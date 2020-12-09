@@ -1,0 +1,92 @@
+body {
+	font-family: "Roboto", sans-serif;
+}
+
+a {
+	color: white;
+	font-size: 15px;
+}
+
+a:hover {
+	color: white;
+	text-decoration: underline;
+}
+
+h1 {
+	color: white;
+	text-align: center;
+	font-size: 35px;
+	font-weight: 900;
+}
+
+h2 {
+	color: white;
+	text-align: center;
+	font-size: 25px;
+	margin: 20px auto;
+	line-height: 1.5;
+}
+
+p {
+	color: white;
+	text-align: center;
+	font-size: 25px;
+	margin: 0 auto 30px;
+}
+
+ul {
+	list-style: none;
+	font-size: 13px;
+	color: white;
+	line-height: 30px;
+	margin-bottom: 25px;
+}
+
+div.container {
+	background: linear-gradient(#675888, #af6a51);
+	border-radius: 5px;
+	max-width: 800px;
+	margin: 15px auto;
+	padding: 33px 60px;
+}
+
+div.card {
+	background-color: #675888;
+	color: white;
+	text-align: center;
+	margin-top: 20px;
+	padding: 5px;
+}
+
+div.cityTemperature {
+	text-align: center;
+}
+
+.card-title {
+	font-size: 16px;
+	margin-bottom: 20px;
+}
+
+.center {
+	text-align: center;
+	width: 100%;
+	color: white;
+}
+
+.search {
+	background-color: white;
+	display: block;
+	margin: 0 auto;
+	padding: 5px;
+	border-radius: 4px;
+}
+
+#city {
+	display: inline-block;
+}
+
+#temperature {
+	display: inline-block;
+	font-size: 30px;
+	margin: auto 10px;
+}
