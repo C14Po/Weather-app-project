@@ -3,12 +3,11 @@ body {
 }
 
 a {
-	color: white;
-	font-size: 15px;
+	color: darkgray;
 }
 
 a:hover {
-	color: white;
+	color: rgb(105, 84, 84);
 	text-decoration: underline;
 }
 
@@ -60,6 +59,14 @@ div.card {
 
 div.cityTemperature {
 	text-align: center;
+}
+
+div.link-github {
+	color: darkgrey;
+	font-size: 13px;
+	font-style: italic;
+	max-width: 800px;
+	margin: 15px auto;
 }
 
 .card-title {
