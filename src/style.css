@@ -26,6 +26,11 @@ h2 {
 	line-height: 1.5;
 }
 
+img {
+	margin: auto;
+	display: block;
+}
+
 p {
 	color: white;
 	text-align: center;
