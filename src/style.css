@@ -73,6 +73,12 @@ div.cityTemperature {
 	color: white;
 }
 
+.degree {
+	color: white;
+	font-size: 25px;
+	font-weight: 800;
+}
+
 .search {
 	background-color: white;
 	display: block;
