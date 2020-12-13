@@ -18,14 +18,6 @@ h1 {
 	font-weight: 900;
 }
 
-h2 {
-	color: white;
-	text-align: center;
-	font-size: 25px;
-	margin: 20px auto;
-	line-height: 1.5;
-}
-
 img {
 	margin: auto;
 	display: block;
@@ -101,6 +93,15 @@ div.link-github {
 
 #city {
 	display: inline-block;
+}
+
+#date {
+	font-size: 20px;
+	line-height: 40px;
+}
+
+#description {
+	font-size: 18px;
 }
 
 #temperature {

@@ -26,14 +26,17 @@ function showTemp(response) {
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp); 
-  document.querySelector("#hum").innerHTML = response.data.main.humidity;
-  document.querySelector("#weather").innerHTML =
+  document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
+  document.querySelector("#icon").setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  document.querySelector("#icon").setAttribute("alt", `http://openweathermap.org/img/wn/${response.data.weather[0].main}@2x.png`);
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
+  document.querySelector("#hum").innerHTML = response.data.main.humidity;
   document.querySelector("#sun").innerHTML = showSun(response.data.sys.sunrise * 1000);
   document.querySelector("#moon").innerHTML = showSun(response.data.sys.sunset * 1000);
+
 }
 
 function searchCity(city) {
