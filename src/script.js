@@ -31,8 +31,7 @@ function showTemp(response) {
   document.querySelector("#icon").setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   document.querySelector("#icon").setAttribute("alt", `http://openweathermap.org/img/wn/${response.data.weather[0].main}@2x.png`);
   document.querySelector("#wind").innerHTML = Math.round(
-    response.data.wind.speed
-  );
+    response.data.wind.speed);
   document.querySelector("#hum").innerHTML = response.data.main.humidity;
   document.querySelector("#sun").innerHTML = showSun(response.data.sys.sunrise * 1000);
   document.querySelector("#moon").innerHTML = showSun(response.data.sys.sunset * 1000);
@@ -49,7 +48,6 @@ function handleSubmit(event) {
 event.preventDefault();
 let city = document.querySelector("#search-input").value;
 searchCity(city);
-
 }
 
 function showPosition(position) {
@@ -65,7 +63,7 @@ navigator.geolocation.getCurrentPosition(showPosition); }
 let currentTime = new Date();
 document.querySelector("#date").innerHTML = formatDate(currentTime);
 
-let currentInput = document.querySelector("button");
+let currentInput = document.querySelector("#current-button");
 currentInput.addEventListener("click", getCurrentPosition);
 
 let searchInput = document.querySelector("#form-groups");
