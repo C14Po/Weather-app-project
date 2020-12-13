@@ -1,16 +1,39 @@
+function formatDate(date) {
+  let hours = (date.getHours() < 10 ? "0" : "") + date.getHours();
+  let minutes = (date.getMinutes() < 10 ? "0" : "") + date.getMinutes();
+  let days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+  "Sunday"
+];
+let day = days[date.getDay()];
+return `${day} ${hours}:${minutes}`;
+}
+
+function showSun(timestamp) {
+  let date = new Date(timestamp);
+  let hours = (date.getHours() < 10 ? "0" : "") + date.getHours();
+  let minutes = (date.getMinutes() < 10 ? "0" : "") + date.getMinutes();
+  return `${hours}:${minutes}`
+}
+
 function showTemp(response) {
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
-    response.data.main.temp);
-  
+    response.data.main.temp); 
   document.querySelector("#hum").innerHTML = response.data.main.humidity;
-
   document.querySelector("#weather").innerHTML =
     response.data.weather[0].main;
-  
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
+  document.querySelector("#sun").innerHTML = showSun(response.data.sys.sunrise * 1000);
+  document.querySelector("#moon").innerHTML = showSun(response.data.sys.sunset * 1000);
 }
 
 function searchCity(city) {
@@ -36,34 +59,14 @@ function getCurrentPosition(event) {
   event.preventDefault();
 navigator.geolocation.getCurrentPosition(showPosition); }
 
-//I don't know how to get the city displayed. It says Undefined
+let currentTime = new Date();
+document.querySelector("#date").innerHTML = formatDate(currentTime);
 
 let currentInput = document.querySelector("button");
 currentInput.addEventListener("click", getCurrentPosition);
 
 let searchInput = document.querySelector("#form-groups");
 searchInput.addEventListener("submit", handleSubmit);
-
-
-let now = new Date();
-
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-  "Sunday"
-];
-
-document.querySelector("#date");
-let day = days[now.getDay()];
-let hour = (now.getHours() < 10 ? "0" : "") + now.getHours();
-let minute = (now.getMinutes() < 10 ? "0" : "") + now.getMinutes();
-
-date.innerHTML = `${day} ${hour}:${minute}`;
 
 searchCity("London");
 
