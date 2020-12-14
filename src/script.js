@@ -24,6 +24,9 @@ function showSun(timestamp) {
 
 function showTemp(response) {
   document.querySelector("#city").innerHTML = response.data.name;
+  
+  celsiusTemp = response.data.main.temp;
+  
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp); 
   document.querySelector("#description").innerHTML =
@@ -35,7 +38,6 @@ function showTemp(response) {
   document.querySelector("#hum").innerHTML = response.data.main.humidity;
   document.querySelector("#sun").innerHTML = showSun(response.data.sys.sunrise * 1000);
   document.querySelector("#moon").innerHTML = showSun(response.data.sys.sunset * 1000);
-
 }
 
 function searchCity(city) {
@@ -60,6 +62,23 @@ function getCurrentPosition(event) {
   event.preventDefault();
 navigator.geolocation.getCurrentPosition(showPosition); }
 
+function showFahrenheit(event) {
+  event.preventDefault();
+  let fahrenheitTemperature = (celsiusTemp * 9) / 5 + 32;
+  fahrenheitLink.classList.add("active");
+  celsiusLink.classList.remove("active");
+  document.querySelector("#temperature").innerHTML = Math.round(fahrenheitTemperature);
+}
+
+function showCelsius(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  document.querySelector("#temperature").innerHTML = Math.round(celsiusTemp);
+}
+
+let celsiusTemp = null;
+
 let currentTime = new Date();
 document.querySelector("#date").innerHTML = formatDate(currentTime);
 
@@ -69,7 +88,15 @@ currentInput.addEventListener("click", getCurrentPosition);
 let searchInput = document.querySelector("#form-groups");
 searchInput.addEventListener("submit", handleSubmit);
 
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", showCelsius);
+
+let fahrenheitLink = document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", showFahrenheit);
+
 searchCity("London");
+
+
 
 
 

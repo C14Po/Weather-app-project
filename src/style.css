@@ -2,15 +2,6 @@ body {
 	font-family: "Roboto", sans-serif;
 }
 
-a {
-	color: darkgray;
-}
-
-a:hover {
-	color: rgb(105, 84, 84);
-	text-decoration: underline;
-}
-
 h1 {
 	color: white;
 	text-align: center;
@@ -55,6 +46,8 @@ div.card {
 }
 
 div.cityTemperature {
+	color: white;
+	font-size: 20px;
 	text-align: center;
 }
 
@@ -64,6 +57,15 @@ div.link-github {
 	font-style: italic;
 	max-width: 800px;
 	margin: 15px auto;
+}
+
+.cityTemperature .active {
+	color: white;
+	cursor: default;
+}
+
+.cityTemperature .active:hover {
+	text-decoration: none;
 }
 
 .card-title {
@@ -91,6 +93,11 @@ div.link-github {
 	border-radius: 4px;
 }
 
+#celsius {
+	color: white;
+	font-size: 20px;
+}
+
 #city {
 	display: inline-block;
 }
@@ -102,6 +109,20 @@ div.link-github {
 
 #description {
 	font-size: 18px;
+}
+
+#fahrenheit {
+	color: white;
+	font-size: 20px;
+}
+
+#footer {
+	color: darkgray;
+}
+
+#footer:hover {
+	color: rgb(105, 84, 84);
+	text-decoration: underline;
 }
 
 #temperature {
