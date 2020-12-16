@@ -40,10 +40,33 @@ function showTemp(response) {
   document.querySelector("#moon").innerHTML = showSun(response.data.sys.sunset * 1000);
 }
 
+function showForecast(response) {
+  let forecastElement = document.querySelector("#forecast");
+  let forecast = response.data.list[0];
+  console.log(forecast);
+
+  forecastElement.innerHTML = `
+    <div class="col-2">
+      <div class="card">
+        <h5 class="card-title">12:00</h5>
+          <img src= "http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" style="height: 70px; width: 70px;"></i>
+          <div class="card-body">
+          <div class="weather-forecast"><strong>${Math.round(forecast.main.temp_max)}°</strong> | ${Math.round(forecast.main.temp_min)}°
+          </div>  
+        </div>
+      </div>
+    </div>  
+  `;
+
+}
+
 function searchCity(city) {
 let apiKey = "e79392cca3f3cb28e460855640711538";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 axios.get(apiUrl).then(showTemp);
+
+apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+axios.get(apiUrl).then(showForecast);
 }
 
 function handleSubmit(event) {

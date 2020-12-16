@@ -59,6 +59,10 @@ div.link-github {
 	margin: 15px auto;
 }
 
+div.card-body {
+	padding: 5px;
+}
+
 .cityTemperature .active {
 	color: white;
 	cursor: default;
@@ -70,7 +74,7 @@ div.link-github {
 
 .card-title {
 	font-size: 16px;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 }
 
 .center {
