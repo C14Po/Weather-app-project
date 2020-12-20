@@ -1,24 +1,35 @@
 body {
-	font-family: "Roboto", sans-serif;
+	font-family: "Hind", sans-serif;
+}
+
+div.container {
+	background: linear-gradient(#4881a2, #c77b5ff6);
+	border-radius: 5px;
+	max-width: 800px;
+	margin: 15px auto;
+	padding: 40px 60px 33px;
 }
 
 h1 {
 	color: white;
+	display: inline-block;
 	text-align: center;
 	font-size: 35px;
-	font-weight: 900;
+	font-weight: 700;
+	margin: auto 5px;
+}
+
+hr {
+	background-color: white;
+	border-top-width: 1px;
+	border-right-width: 0;
+	border-bottom-width: 0;
+	border-left-width: 0;
 }
 
 img {
 	margin: auto;
 	display: block;
-}
-
-p {
-	color: white;
-	text-align: center;
-	font-size: 25px;
-	margin: 0 auto 30px;
 }
 
 ul {
@@ -29,38 +40,33 @@ ul {
 	margin-bottom: 25px;
 }
 
-div.container {
-	background: linear-gradient(#675888, #af6a51);
-	border-radius: 5px;
-	max-width: 800px;
-	margin: 15px auto;
-	padding: 33px 60px;
-}
-
-div.card {
-	background-color: #675888;
+.card {
+	background-color: rgba(95, 179, 228, 0.3);
 	color: white;
 	text-align: center;
-	margin-top: 20px;
+	margin: 35px auto 25px;
 	padding: 5px;
 }
 
-div.cityTemperature {
+.card-body {
+	padding: 5px;
+}
+
+.card-title {
+	font-size: 16px;
+	margin: 10px 0;
+}
+
+.cityTemperature {
 	color: white;
 	font-size: 20px;
+	margin-bottom: 20px;
 	text-align: center;
 }
 
-div.link-github {
-	color: darkgrey;
-	font-size: 13px;
-	font-style: italic;
-	max-width: 800px;
-	margin: 15px auto;
-}
-
-div.card-body {
-	padding: 5px;
+.cityTemperature a {
+	color: white;
+	font-size: 25px;
 }
 
 .cityTemperature .active {
@@ -72,52 +78,34 @@ div.card-body {
 	text-decoration: none;
 }
 
-.card-title {
-	font-size: 16px;
-	margin-bottom: 10px;
+.link-github {
+	color: darkgrey;
+	font-size: 13px;
+	font-style: italic;
+	max-width: 800px;
+	margin: 15px auto;
 }
 
-.center {
-	text-align: center;
-	width: 100%;
+.extra-info {
+	margin: 30px auto 20px;
+}
+
+.information {
+	border: solid;
+	background-color: rgba(137, 193, 228, 0.3);
+	border-radius: 5px;
+	border-width: thin;
 	color: white;
-}
-
-.degree {
-	color: white;
-	font-size: 25px;
-	font-weight: 800;
-}
-
-.search {
-	background-color: white;
-	display: block;
-	margin: 0 auto;
-	padding: 5px;
-	border-radius: 4px;
-}
-
-#celsius {
-	color: white;
-	font-size: 20px;
-}
-
-#city {
-	display: inline-block;
+	margin-bottom: 30px;
 }
 
 #date {
 	font-size: 20px;
-	line-height: 40px;
+	line-height: 60px;
 }
 
 #description {
 	font-size: 18px;
-}
-
-#fahrenheit {
-	color: white;
-	font-size: 20px;
 }
 
 #footer {
@@ -127,10 +115,4 @@ div.card-body {
 #footer:hover {
 	color: rgb(105, 84, 84);
 	text-decoration: underline;
-}
-
-#temperature {
-	display: inline-block;
-	font-size: 30px;
-	margin: auto 10px;
 }

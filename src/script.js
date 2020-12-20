@@ -1,6 +1,5 @@
-function formatDate(date) {
-  let hours = (date.getHours() < 10 ? "0" : "") + date.getHours();
-  let minutes = (date.getMinutes() < 10 ? "0" : "") + date.getMinutes();
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
   let days = [
   "Sunday",
   "Monday",
@@ -12,14 +11,14 @@ function formatDate(date) {
   "Sunday"
 ];
 let day = days[date.getDay()];
-return `${day} ${hours}:${minutes}`;
+return `${day} ${formatHours(timestamp)}`;
 }
 
-function showSun(timestamp) {
+function formatHours(timestamp) {
   let date = new Date(timestamp);
   let hours = (date.getHours() < 10 ? "0" : "") + date.getHours();
   let minutes = (date.getMinutes() < 10 ? "0" : "") + date.getMinutes();
-  return `${hours}:${minutes}`
+  return `${hours}:${minutes}`;
 }
 
 function showTemp(response) {
@@ -36,19 +35,21 @@ function showTemp(response) {
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed);
   document.querySelector("#hum").innerHTML = response.data.main.humidity;
-  document.querySelector("#sun").innerHTML = showSun(response.data.sys.sunrise * 1000);
-  document.querySelector("#moon").innerHTML = showSun(response.data.sys.sunset * 1000);
+  document.querySelector("#sun").innerHTML = formatHours(response.data.sys.sunrise * 1000);
+  document.querySelector("#moon").innerHTML = formatHours(response.data.sys.sunset * 1000);
 }
 
 function showForecast(response) {
   let forecastElement = document.querySelector("#forecast");
-  let forecast = response.data.list[0];
-  console.log(forecast);
-
-  forecastElement.innerHTML = `
-    <div class="col-2">
+  forecastElement.innerHTML = null;
+  let forecast = null;
+  
+  for (let index = 0; index < 5; index++) {
+  forecast = response.data.list[index];
+  forecastElement.innerHTML += `
+    <div class="col">
       <div class="card">
-        <h5 class="card-title">12:00</h5>
+        <h5 class="card-title">${formatHours(forecast.dt * 1000)}</h5>
           <img src= "http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" style="height: 70px; width: 70px;"></i>
           <div class="card-body">
           <div class="weather-forecast"><strong>${Math.round(forecast.main.temp_max)}°</strong> | ${Math.round(forecast.main.temp_min)}°
@@ -58,6 +59,7 @@ function showForecast(response) {
     </div>  
   `;
 
+  }
 }
 
 function searchCity(city) {
