@@ -58,7 +58,6 @@ function showForecast(response) {
       </div>
     </div>  
   `;
-
   }
 }
 

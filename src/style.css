@@ -13,10 +13,10 @@ div.container {
 h1 {
 	color: white;
 	display: inline-block;
-	text-align: center;
 	font-size: 35px;
 	font-weight: 700;
 	margin: auto 5px;
+	text-align: center;
 }
 
 hr {
@@ -28,24 +28,24 @@ hr {
 }
 
 img {
-	margin: auto;
 	display: block;
+	margin: auto;
 }
 
 ul {
-	list-style: none;
-	font-size: 13px;
 	color: white;
+	font-size: 13px;
 	line-height: 30px;
+	list-style: none;
 	margin-bottom: 25px;
 }
 
 .card {
 	background-color: rgba(95, 179, 228, 0.3);
 	color: white;
-	text-align: center;
 	margin: 35px auto 25px;
 	padding: 5px;
+	text-align: center;
 }
 
 .card-body {
@@ -91,8 +91,8 @@ ul {
 }
 
 .information {
-	border: solid;
 	background-color: rgba(137, 193, 228, 0.3);
+	border: solid;
 	border-radius: 5px;
 	border-width: thin;
 	color: white;
