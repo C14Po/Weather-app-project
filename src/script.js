@@ -80,11 +80,16 @@ function showPosition(position) {
   let apiKey = "e79392cca3f3cb28e460855640711538";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showTemp);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showForecast);
 }
 
 function getCurrentPosition(event) {
   event.preventDefault();
-navigator.geolocation.getCurrentPosition(showPosition); }
+navigator.geolocation.getCurrentPosition(showPosition); 
+
+}
 
 function showFahrenheit(event) {
   event.preventDefault();
